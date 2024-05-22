@@ -71,10 +71,10 @@ isows@1.0.3:
   resolved "https://registry.yarnpkg.com/isows/-/isows-1.0.3.tgz#93c1cf0575daf56e7120bab5c8c448b0809d0d74"
   integrity sha512-2cKei4vlmg2cxEjm3wVSqn8pcoRF/LX/wpifuuNquFO4SQmPwarClT+SUCA2lt+l581tTeZIPIZuIDo2jWN1fg==
 
-permissionless@^0.0.34:
-  version "0.0.34"
-  resolved "https://registry.yarnpkg.com/permissionless/-/permissionless-0.0.34.tgz#479ee4c02068c6982a308df7a64351eea626a00d"
-  integrity sha512-lP59+7VmjLO7dPctH69kgcJ8evxGkrjQ9hruOA+7ymWvUMiuXAfVxvXSWCV+lg67N2TGs1JneEuhwK+iI3kPvA==
+permissionless@^0.1.22:
+  version "0.1.29"
+  resolved "https://registry.yarnpkg.com/permissionless/-/permissionless-0.1.29.tgz#185faa51d106422670b6c92cfca861f889e9de8d"
+  integrity sha512-jKkgl3G2b4hv5DvX2U8v0OI3JfX+nEzj9a6zsrcXuJaLZdS14td4tExnlmBY93nUN6lRC6NfPZjdLbi8Dkzz7w==
 
 tslib@^2.6.2:
   version "2.6.2"
