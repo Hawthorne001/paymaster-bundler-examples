@@ -1,7 +1,7 @@
 import { encodeFunctionData, http } from 'viem'
 import { baseSepolia } from 'viem/chains'
 import { createSmartAccountClient } from 'permissionless'
-import { createPimlicoPaymasterClient } from "permissionless/clients/pimlico";
+import { createPimlicoClient } from "permissionless/clients/pimlico";
 import { getAccount } from './account.js';
 import { abi } from './abi.js';
 import config from '../../../config.js';
@@ -11,7 +11,7 @@ const rpcUrl = config.rpc_url
 const contractAddress = config.contract_address;
 
 // Create the Cloud Paymaster
-const cloudPaymaster = createPimlicoPaymasterClient({
+const cloudPaymaster = createPimlicoClient({
     chain: baseSepolia,
     transport: http(rpcUrl)
 })
@@ -26,9 +26,9 @@ const account = await getAccount(config.account_type).catch((error) => {
 const smartAccountClient = createSmartAccountClient({
     account,
     chain: baseSepolia,
-    transport: http(rpcUrl),
+    bundlerTransport: http(rpcUrl),
     // IMPORTANT: Set up the Cloud Paymaster to sponsor your transaction
-    sponsorUserOperation: cloudPaymaster.sponsorUserOperation,
+    paymaster: cloudPaymaster
 });
 
 // Encode the calldata
@@ -48,5 +48,6 @@ const txHash = await smartAccountClient.sendTransaction({
     value: BigInt(0),
 });
 
-console.log("\x1b[32m", `⛽ Successfully sponsored gas for ${config.function_name} transaction with Coinbase Cloud!`);
+console.log("\x1b[32m", `⛽ Successfully sponsored gas for ${config.function_name} transaction with Coinbase Developer Platform!`);
 console.log("\x1b[36m", `🔍 View on Etherscan: https://sepolia.basescan.org/tx/${txHash}`);
+process.exit(0)

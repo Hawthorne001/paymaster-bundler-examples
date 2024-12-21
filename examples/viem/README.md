@@ -1,6 +1,6 @@
 ## Getting Started
 
-This example uses [the ZeroDev SDK](https://docs.zerodev.app/) to create a [ERC-4337](https://www.erc4337.io/) smart contract account and send a sponsored transaction.
+This example uses viem and viem's Account Abstraction extension [viem-aa](https://viem.sh/account-abstraction) to create a [ERC-4337](https://www.erc4337.io/) smart contract account and send a sponsored transaction.
 
 We'll be minting a NFT on Base Sepolia using Coinbase Developer Platform's Paymaster & Bundler.
 
@@ -25,8 +25,7 @@ yarn dev
 You should receive an Etherscan link with your sponsored transaction in the terminal output. [Example](https://sepolia.basescan.org/tx/0xe51e9bf6fea0dfecfcbf7168bcc7da2c833ad0dcac5651940953a89857674885)
 
 ```
-Minting to 0xF19CEA17462220437000F459f721e3e393bd1fc9
-Waiting for transaction...
+ ✅ Transaction successfully sponsored!"
  ⛽ Successfully sponsored gas for mintTo transaction with Coinbase Developer Platform!
  🔍 View on Etherscan: https://sepolia.basescan.org/tx/0xe51e9bf6fea0dfecfcbf7168bcc7da2c833ad0dcac5651940953a89857674885
 ✨  Done in 5.66s.

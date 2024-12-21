@@ -1,6 +1,8 @@
-# [Coinbase Cloud Paymaster & Bundler Examples](https://github.com/coinbase/paymaster-bundler-examples)
+# [Coinbase Developer Platform Paymaster & Bundler Examples](https://github.com/coinbase/paymaster-bundler-examples)
 
-This repo has code examples on how to sponsor a mint for a [Knight Warriors](https://sepolia.basescan.org/token/0x66519fcaee1ed65bc9e0acc25ccd900668d3ed49) NFT on Base Sepolia using Coinbase Cloud's Paymaster & Bundler. If you'd like to see a live demo app sponsoring NFT mints in action, check out ours [here](https://buildonchainapps.xyz/paymaster-bundler).
+✨ Looking for frontend examples? Be sure to check out our **[Wagmi](https://github.com/coinbase/paymaster-bundler-examples/tree/master/examples/wagmi)** example for inspiration and guidance! ✨
+
+This repo has code examples on how to sponsor a mint for a [Knight Warriors](https://sepolia.basescan.org/token/0x66519fcaee1ed65bc9e0acc25ccd900668d3ed49) NFT on Base Sepolia using Coinbase Developer Platform's Paymaster & Bundler. If you'd like to see a live demo app sponsoring NFT mints in action, check out ours [here](https://paymaster-demo-app.vercel.app/).
 
 We currently have examples for the following SDKs, but contributions are always welcome! See [Contributing](https://github.com/coinbase/paymaster-bundler-examples/blob/master/CONTRIBUTING.md) for more details.
 
@@ -9,20 +11,25 @@ We currently have examples for the following SDKs, but contributions are always 
 - [Alchemy (aa-core)](https://github.com/coinbase/paymaster-bundler-examples/tree/master/examples/alchemy)
 - [Pimlico (permissionless.js)](https://github.com/coinbase/paymaster-bundler-examples/tree/master/examples/pimlico)
 - [ZeroDev (@zerodev/sdk)](https://github.com/coinbase/paymaster-bundler-examples/tree/master/examples/zerodev)
+- [Wagmi (wevm/wagmi)](https://github.com/coinbase/paymaster-bundler-examples/tree/master/examples/wagmi)
+- [Viem](https://github.com/coinbase/paymaster-bundler-examples/tree/master/examples/viem)
 
 ### Supported Account Types
 
 - [SimpleAccount](https://github.com/eth-infinitism/account-abstraction/blob/develop/contracts/samples/SimpleAccount.sol) (default)
 - [Safe](https://safe.global/)
 - [Kernel](https://github.com/zerodevapp/kernel)
+- [Coinbase Smart Account](https://github.com/coinbase/smart-wallet)
 
 ### Compatibility
 
-| SDK               | Simple | Safe | Kernel |
-| ----------------- | ------ | ---- | ------ |
-| aa-core           | ✅     | ❌   | ❌     |
-| permissionless.js | ✅     | ✅   | ✅     |
-| @zerodev/sdk      | ❌     | ❌   | ✅     |
+| SDK               | Simple | Safe | Kernel | Coinbase |
+| ----------------- | ------ | ---- | ------ | -------- |
+| aa-core           | ✅     | ❌   | ❌     | ❌       |
+| permissionless.js | ✅     | ✅   | ✅     | ✅       |
+| @zerodev/sdk      | ❌     | ❌   | ✅     | ❌       |
+| wevm/wagmi        | ❌     | ✅   | ❌     | ✅       |
+| viem              | ✅     | ✅   | ✅     | ✅       |
 
 ## Getting Started
 
@@ -50,13 +57,14 @@ yarn
 
 - This will setup dotenv to load the env file for private values
 
-- ### Create your Base Node RPC URL
+- ### Get your Node RPC URL
 
-  - Navigate to https://coinbase.com/cloud/products/base/rpc
-  - Sign up for a Coinbase Cloud account, if you don't have one already
-  - Create a project, and select **Base Sepolia**
-  - Click "**Activate**" on the Paymaster & Bundler modal
+  - Navigate to https://www.coinbase.com/developer-platform/products/base-node
+  - Sign up for a Coinbase Developer Platform account, if you don't have one already.
+  - Under the **Build Onchain** section in the Portal, select **Node**
+  - In the dropdown on the top right of **Configuration**, select **Base Testnet (Sepolia)**
   - Copy your RPC endpoint, and paste it into `.env` as the `RPC_URL` variable.
+    - The RPC URL should look like `https://api.developer.coinbase.com/rpc/v1/base-sepolia/<api_key>`
 
 - ### Add a signer
 
@@ -101,11 +109,11 @@ You should receive an Etherscan link with your sponsored transaction in the term
 ```
 Minting to 0xF19CEA17462220437000F459f721e3e393bd1fc9
 Waiting for transaction...
- ⛽ Successfully sponsored gas for mintTo transaction with Coinbase Cloud!
+ ⛽ Successfully sponsored gas for mintTo transaction with Coinbase Developer Platform!
  🔍 View on Etherscan: https://sepolia.basescan.org/tx/0xe51e9bf6fea0dfecfcbf7168bcc7da2c833ad0dcac5651940953a89857674885
 ✨  Done in 5.66s.
 ```
 
 ### 7. Play around with our demo app
 
-If you'd like to see an example of an app sponsoring NFT mints in action, check out our demo app [here](https://buildonchainapps.xyz/paymaster-bundler).
+If you'd like to see an example of an app sponsoring NFT mints in action, check out our demo app [here](https://paymaster-demo-app.vercel.app/).
